@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ANIMATE CSS -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
-    <!-- <h1 class="hover:bg-blue-900">Home</h1> -->
+<body class="dark:bg-slate-800">
     <nav class="fixed top-0 right-0 left-0 bg-indigo-700 h-16">
-        <div class="max-w-7xl h-16 mx-auto flex items-center px-4 justify-between">
-            <p class="font-bold text-xl">Todo App</p>
-
-            <!-- Version movil -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-              
-
-
+        <div class="max-w-7xl h-16 mx-auto">
+            <p class="font-bold text-sm">TodoApp</p>
         </div>
     </nav>
+
+
+
+    <div class="h-screen flex justify-center items-center flex-col px-4 gap-4 md:flex-row md:w-9/12 md:mx-auto md:gap-8 dark:text-white">
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl md:w-2/5 text-center animate__animated animate__fadeInTopRight">Todo App</h1>
+        
+        <div class="md:w-3/5 gap-4 flex flex-col md:text-lg lg:text-xl  animate__animated animate__fadeInUp animate__delay-1s">
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde labore quisquam pariatur adipisci magni sapiente, aliquam blanditiis maiores perspiciatis deserunt nemo minus iure sint reprehenderit soluta, odio incidunt itaque omnis!</p>
+            <div id="btn-group" class="flex justify-center items-center gap-4">
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
