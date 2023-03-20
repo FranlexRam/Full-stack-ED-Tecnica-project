@@ -37,6 +37,7 @@ const createNavHome = () => {
     `;
 }
 
+
 const createNavSignup = () => {
     navbar.innerHTML = `
     <div class="max-w-7xl h-16 mx-auto flex items-center px-4 justify-between">
@@ -94,8 +95,12 @@ navBtn.addEventListener('click', e => {
         menuMobile.classList.remove('animate__backInLeft');
         menuMobile.classList.add('animate__backOutRight');
         //menuMobile.classList.add('hidden');
-        menuMobile.classList.remove('flex');
+        //menuMobile.classList.remove('flex');
         console.log(navbar.children[0].children[3]);
     }
 });
+
+
+
+
 
