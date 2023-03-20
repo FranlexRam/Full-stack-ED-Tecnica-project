@@ -1,4 +1,5 @@
 const navbar = document.querySelector('#navbar');
+console.log(navbar);
 
 const createNavHome = () => {
     navbar.innerHTML = `
@@ -72,7 +73,7 @@ const createNavSignup = () => {
 
 if(window.location.pathname === '/') {
     createNavHome();
-} else if (window.location.pathname === '/signup/') {
+} else if (window.location.pathname === '/registro/') {
     createNavSignup();
 }
 
