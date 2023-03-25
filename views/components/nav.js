@@ -1,5 +1,5 @@
 const navbar = document.querySelector('#navbar');
-console.log(navbar);
+//console.log(navbar);
 
 const createNavHome = () => {
     navbar.innerHTML = `
