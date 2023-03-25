@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
+const cookieParser = require ('cookie-parser');
+const morgan = require('morgan');
 const usersRouter = require('./controllers/users');
 
 (async() => {
@@ -15,12 +18,18 @@ const usersRouter = require('./controllers/users');
     }
 })();
 
+app.use(cors());
+app.use(express.json());
+app.use(cookieParser());
+
 //Frontend routes
 app.use('/' , express.static(path.resolve('views', 'home')));
 app.use('/components' , express.static(path.resolve('views', 'components')));
 app.use('/login' , express.static(path.resolve('views', 'login')));
 app.use('/registro' , express.static(path.resolve('views', 'signup')));
 app.use('/images' , express.static(path.resolve('img')));
+
+app.use(morgan('tiny'));
 
 //Backend routes
 app.use('/api/users', usersRouter);
