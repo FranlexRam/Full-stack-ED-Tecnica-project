@@ -12,6 +12,12 @@ usersRouter.post('/', async (request,response) =>{
         return response.status(400).json({ error: 'Todos los espacios son requeridos' });
     }
 
+    const userExist = await User.findOne({ email });
+
+    if (userExist) {
+        return response.status(400).json({ error: 'El email ya existe. Se encuentra en uso.' }); 
+    }
+
     const saltRounds = 10;
 
     const passwordHash = await bcrypt.hash(password, saltRounds);
@@ -41,7 +47,7 @@ usersRouter.post('/', async (request,response) =>{
         from: process.env.EMAIL_USER, // sender address
         to: savedUser.email, // list of receivers
         subject: 'Verificacion de usuario. APP Franlex Eduardo', // Subject line
-        html: `<a href="${PAGE_URL}/${token}">Verificar correo</a>`, // html body
+        html: `<a href="${PAGE_URL}/${token}">Verifica tu correo aqui</a>`, // html body
       });
 
       return response.status(201).json('Usuario creado. Por favor verifica tu correo.');
