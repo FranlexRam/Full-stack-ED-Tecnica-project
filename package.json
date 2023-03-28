@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=dev node open.js && nodemon index.js"
+    "dev": "cross-env NODE_ENV=dev node open.js && nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.21",
     "open": "^8.4.2",
     "postcss": "^8.4.21",

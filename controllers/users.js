@@ -3,6 +3,7 @@ const User = require('../models/user.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
+const { PAGE_URL } = require('../config.js');
 
 usersRouter.post('/', async (request,response) =>{
     const { name, email, password } = request.body;
@@ -40,8 +41,10 @@ usersRouter.post('/', async (request,response) =>{
         from: process.env.EMAIL_USER, // sender address
         to: savedUser.email, // list of receivers
         subject: 'Verificacion de usuario. APP Franlex Eduardo', // Subject line
-        html: `<a href=""></a>`, // html body
+        html: `<a href="${PAGE_URL}/${token}">Verificar correo</a>`, // html body
       });
+
+      return response.status(201).json('Usuario creado. Por favor verifica tu correo.');
 
 });
 
