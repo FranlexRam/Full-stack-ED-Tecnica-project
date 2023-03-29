@@ -47,7 +47,7 @@ usersRouter.post('/', async (request,response) =>{
         from: process.env.EMAIL_USER, // sender address
         to: savedUser.email, // list of receivers
         subject: 'Verificacion de usuario. APP Franlex Eduardo', // Subject line
-        html: `<a href="${PAGE_URL}/${token}">Verifica tu correo aqui</a>`, // html body
+        html: `<a href="${PAGE_URL}/verify/${token}">Verifica tu correo aqui</a>`, // html body
       });
 
       return response.status(201).json('Usuario creado. Por favor verifica tu correo.');
